@@ -33,6 +33,39 @@ main()
 		}
 		printf("\n");
 	}
+	
+	printf("\n\n\n\n");
+
+	bool skip = false;
+	int buf;
+	
+	while (!skip) 
+	{
+	    skip = true;
+	    for (int i = 0; i < n; i++)
+	    {
+	      for (int j = 0; j < m-1; j++)
+	      {
+	        if (mas[i][j] > mas[i][j + 1]) 
+			{
+	          buf=mas[i][j];
+	          mas[i][j]=mas[i][j + 1];
+	          mas[i][j + 1]=buf;
+	          skip = false;
+	        }
+	        
+	      }
+	    }
+	}
+	
+	for (int i=0; i<n; i++)
+	{
+		for (int j=0; j<m; j++)
+		{
+			printf("%3i", mas[i][j]);
+		}
+		printf("\n");
+	}
 
 	for(int j=0; j<m/2; j++)
 	{
